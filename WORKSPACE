@@ -1,1 +1,1 @@
-workspace(name="bazel_ext")
+workspace(name="bazel_ext_repo")
