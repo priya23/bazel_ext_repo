@@ -4,7 +4,7 @@ licenses(["notice"])  # Apache 2
 COPTS = ["-DSPDLOG_COMPILED_LIB"]
 
 cc_library(
-    name = "spdlog",
+    name = "lib",
     srcs = glob([
         "src/*.cpp",
     ]),
