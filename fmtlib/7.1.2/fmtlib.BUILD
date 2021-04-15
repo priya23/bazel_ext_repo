@@ -1,13 +1,9 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 
-licenses(["notice"])  # Apache 2
-
-cc_library(
+cmake(
     name = "fmtlib",
-    hdrs = glob([
-        "include/fmt/*.h",
-    ]),
-    defines = ["FMT_HEADER_ONLY"],
-    includes = ["include"],
-    visibility = ["//visibility:public"],
+    cache_entries = {
+        "CMAKE_C_FLAGS": "-fPIC",
+    },
+    lib_source = "@fmtlib//:all_srcs",
 )
